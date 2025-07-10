@@ -21,7 +21,7 @@
 title: Jack Campbell
 email: jackwilliamleecampbell@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my website!
+  Feel free to look around!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 linkedin_username: jack-campbell-a392191a1
@@ -31,6 +31,12 @@ github_username:  jack-campbeli
 theme: minima
 plugins:
   - jekyll-feed
+
+# Header pages (navigation)
+header_pages:
+  - posts.markdown
+  - resume.markdown
+  - about.markdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.
