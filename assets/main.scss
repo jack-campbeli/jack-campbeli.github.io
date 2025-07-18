@@ -42,16 +42,6 @@
     gap: 8px;
   }
   
-  #shader-container {
-    width: 50px !important;
-    height: 32px !important;
-    
-    canvas {
-      width: 50px !important;
-      height: 32px !important;
-    }
-  }
-  
   // Make large shader responsive on mobile
   #large-shader-container {
     canvas {

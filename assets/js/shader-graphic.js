@@ -108,7 +108,7 @@ void main (void) {
     vec2 mst = gl_FragCoord.xy/resolution.xy;
     float mdist= distance(vec2(0.5,0.5), mst);
     
-    float dist = distance(st,vec2(sin(time/10.0),cos(time/10.0)));
+    float dist = distance(st,vec2(sin(time/5.0),cos(time/2.5)));
     st = tile(st,1.0);
     
     st = rotate2D(st,dist/(mdist/5.0)*PI*2.0);
