@@ -1,6 +1,6 @@
-// Large Shader Graphic for Misc Page
+// Large Shader Graphic for Test Page - Instance Mode
 // Vertex shader code as a string
-let vertexShaderLarge = `
+const largeShaderVertexCode = `
 precision highp float;
 
 attribute vec3 aPosition;
@@ -28,8 +28,8 @@ void main() {
 }
 `;
 
-// Fragment shader code as a string
-let fragmentShaderLarge = `
+// Fragment shader code as a string  
+const largeShaderFragmentCode = `
 // casey conchinha - @kcconch ( https://github.com/kcconch )
 // louise lessel - @louiselessel ( https://github.com/louiselessel )
 // more p5.js + shader examples: https://itp-xstory.github.io/p5js-shaders/
@@ -117,88 +117,87 @@ void main (void) {
 }
 `;
 
-// Large shader variables
-let theShaderLarge;
-let largeCanvas;
-let startTimeLarge;
-
-function setup() {
-  // Wait for DOM to be ready and container to exist
-  let container = document.getElementById('large-shader-container');
-  if (!container) {
-    // If container doesn't exist yet, wait and try again
-    setTimeout(setup, 100);
-    return;
+// Large Shader Class
+class LargeShader {
+  constructor() {
+    this.p5Instance = null;
+    this.theShader = null;
+    this.startTime = null;
+    this.isInitialized = false;
+    this.initializeShader();
   }
-  
-  // Create a larger canvas for the misc page
-  largeCanvas = createCanvas(600, 400, WEBGL);
-  largeCanvas.parent('large-shader-container');
-  
-  noStroke();
-  angleMode(DEGREES);
-  
-  // Store start time in sessionStorage to persist across page loads
-  if (!sessionStorage.getItem('largeShaderStartTime')) {
-    sessionStorage.setItem('largeShaderStartTime', Date.now().toString());
+
+  initializeShader() {
+    // Wait for DOM to be ready and container to exist
+    const container = document.getElementById('large-shader-container');
+    if (!container) {
+      setTimeout(() => this.initializeShader(), 100);
+      return;
+    }
+    
+    // Check if already initialized
+    if (this.isInitialized || container.querySelector('canvas')) {
+      return;
+    }
+
+    // Store start time in sessionStorage to persist across page loads
+    if (!sessionStorage.getItem('largeShaderStartTime')) {
+      sessionStorage.setItem('largeShaderStartTime', Date.now().toString());
+    }
+    this.startTime = parseInt(sessionStorage.getItem('largeShaderStartTime'));
+
+    // Create p5.js instance
+    this.p5Instance = new p5((p) => {
+      p.setup = () => {
+        const canvas = p.createCanvas(600, 400, p.WEBGL);
+        canvas.parent('large-shader-container');
+        
+        p.noStroke();
+        p.angleMode(p.DEGREES);
+        
+        this.theShader = p.createShader(largeShaderVertexCode, largeShaderFragmentCode);
+        this.isInitialized = true;
+      };
+
+      p.draw = () => {
+        if (!this.theShader) return;
+        
+        p.clear(); // Completely transparent background
+
+        // Use consistent time based on start time for continuous animation
+        const currentTime = (Date.now() - this.startTime) / 1000.0;
+        
+        // Send uniform values to the shader
+        this.theShader.setUniform('resolution', [p.width, p.height]);
+        this.theShader.setUniform('time', currentTime);
+        this.theShader.setUniform('mouse', [p.mouseX, p.map(p.mouseY, 0, p.height, p.height, 0)]);
+
+        p.shader(this.theShader);
+        
+        // Create a larger animated sphere for the misc page
+        p.translate(0, 0, 0);
+        p.push();
+        p.rotateY(currentTime * 1000 * 0.001);
+        p.rotateX(currentTime * 1000 * 0.0005);
+        p.sphere(120);
+        p.pop();
+      };
+    });
   }
-  startTimeLarge = parseInt(sessionStorage.getItem('largeShaderStartTime'));
-
-  // Create a shader object using the vertex shader and fragment shader strings
-  theShaderLarge = createShader(vertexShaderLarge, fragmentShaderLarge);
-}
-
-function draw() {
-  // Only draw if shader and canvas exist
-  if (!theShaderLarge || !largeCanvas) {
-    return;
-  }
-  
-  clear(); // Completely transparent background
-
-  // Use consistent time based on start time for continuous animation
-  let currentTime = (Date.now() - startTimeLarge) / 1000.0;
-  
-  // Send uniform values to the shader
-  theShaderLarge.setUniform('resolution', [width, height]);
-  theShaderLarge.setUniform('time', currentTime);
-  theShaderLarge.setUniform('mouse', [mouseX, map(mouseY, 0, height, height, 0)]);
-
-  shader(theShaderLarge);
-  
-  // Create a larger animated sphere for the misc page
-  translate(0, 0, 0);
-  push();
-  rotateY(currentTime * 1000 * 0.001);
-  rotateX(currentTime * 1000 * 0.0005);
-  sphere(120);
-  pop();
 }
 
 // Initialize the large shader
+let largeShaderInstance = null;
+
 function initLargeShader() {
-  // Check if we already have a canvas running
-  if (document.querySelector('#large-shader-container canvas')) {
-    return; // Already initialized
-  }
-  
-  // Ensure container exists
-  let container = document.getElementById('large-shader-container');
-  if (!container) {
-    setTimeout(initLargeShader, 50);
-    return;
-  }
-  
-  // Call p5.js setup
-  if (typeof setup === 'function') {
-    setup();
+  if (!largeShaderInstance) {
+    largeShaderInstance = new LargeShader();
   }
 }
 
-// Try to initialize when script loads
+// Auto-initialize when script loads
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initLargeShader);
 } else {
-  // DOM already loaded
   setTimeout(initLargeShader, 50);
 } 

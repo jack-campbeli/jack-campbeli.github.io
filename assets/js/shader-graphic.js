@@ -1,6 +1,6 @@
-// Jack Campbell's Header Shader Graphic
+// Jack Campbell's Header Shader Graphic - Instance Mode
 // Vertex shader code as a string
-let vertexShader = `
+const headerShaderVertexCode = `
 precision highp float;
 
 attribute vec3 aPosition;
@@ -29,7 +29,7 @@ void main() {
 `;
 
 // Fragment shader code as a string
-let fragmentShader = `
+const headerShaderFragmentCode = `
 // casey conchinha - @kcconch ( https://github.com/kcconch )
 // louise lessel - @louiselessel ( https://github.com/louiselessel )
 // more p5.js + shader examples: https://itp-xstory.github.io/p5js-shaders/
@@ -108,7 +108,7 @@ void main (void) {
     vec2 mst = gl_FragCoord.xy/resolution.xy;
     float mdist= distance(vec2(0.5,0.5), mst);
     
-    float dist = distance(st,vec2(sin(time/5.0),cos(time/2.5)));
+    float dist = distance(st,vec2(sin(time/5.0),cos(time/5.0)));
     st = tile(st,1.0);
     
     st = rotate2D(st,dist/(mdist/5.0)*PI*2.0);
@@ -117,88 +117,87 @@ void main (void) {
 }
 `;
 
-// This variable will hold our shader object
-let theShader;
-let shaderCanvas;
-let startTime;
-
-function setup() {
-  // Wait for DOM to be ready and container to exist
-  let container = document.getElementById('shader-container');
-  if (!container) {
-    // If container doesn't exist yet, wait and try again
-    setTimeout(setup, 100);
-    return;
+// Header Shader Class
+class HeaderShader {
+  constructor() {
+    this.p5Instance = null;
+    this.theShader = null;
+    this.startTime = null;
+    this.isInitialized = false;
+    this.initializeShader();
   }
-  
-  // Create a smaller canvas for header display
-  shaderCanvas = createCanvas(60, 40, WEBGL);
-  shaderCanvas.parent('shader-container');
-  
-  noStroke();
-  angleMode(DEGREES);
-  
-  // Store start time in sessionStorage to persist across page loads
-  if (!sessionStorage.getItem('shaderStartTime')) {
-    sessionStorage.setItem('shaderStartTime', Date.now().toString());
-  }
-  startTime = parseInt(sessionStorage.getItem('shaderStartTime'));
 
-  // Create a shader object using the vertex shader and fragment shader strings
-  theShader = createShader(vertexShader, fragmentShader);
-}
+  initializeShader() {
+    // Wait for DOM to be ready and container to exist
+    const container = document.getElementById('shader-container');
+    if (!container) {
+      setTimeout(() => this.initializeShader(), 100);
+      return;
+    }
+    
+    // Check if already initialized
+    if (this.isInitialized || container.querySelector('canvas')) {
+      return;
+    }
 
-function draw() {
-  // Only draw if shader and canvas exist
-  if (!theShader || !shaderCanvas) {
-    return;
-  }
-  
-  clear(); // Completely transparent background
+    // Store start time in sessionStorage to persist across page loads
+    if (!sessionStorage.getItem('headerShaderStartTime')) {
+      sessionStorage.setItem('headerShaderStartTime', Date.now().toString());
+    }
+    this.startTime = parseInt(sessionStorage.getItem('headerShaderStartTime'));
 
-  // Use consistent time based on start time for continuous animation
-  let currentTime = (Date.now() - startTime) / 1000.0;
-  
-  // Send uniform values to the shader
-  theShader.setUniform('resolution', [width, height]);
-  theShader.setUniform('time', currentTime);
-  theShader.setUniform('mouse', [mouseX, map(mouseY, 0, height, height, 0)]);
+    // Create p5.js instance
+    this.p5Instance = new p5((p) => {
+      p.setup = () => {
+        const canvas = p.createCanvas(60, 40, p.WEBGL);
+        canvas.parent('shader-container');
+        
+        p.noStroke();
+        p.angleMode(p.DEGREES);
+        
+        this.theShader = p.createShader(headerShaderVertexCode, headerShaderFragmentCode);
+        this.isInitialized = true;
+      };
 
-  shader(theShader);
-  
-  // Create a simple animated shape for the header
-  translate(0, 0, 0);
-  push();
-  rotateY(currentTime * 1000 * 0.001);
-  rotateX(currentTime * 1000 * 0.0005);
-  sphere(15);
-  pop();
-}
+      p.draw = () => {
+        if (!this.theShader) return;
+        
+        p.clear(); // Completely transparent background
 
-// Initialize the shader - this will be called when p5.js is ready
-function initShader() {
-  // Check if we already have a canvas running
-  if (document.querySelector('#shader-container canvas')) {
-    return; // Already initialized
-  }
-  
-  // Ensure container exists
-  let container = document.getElementById('shader-container');
-  if (!container) {
-    setTimeout(initShader, 50);
-    return;
-  }
-  
-  // Call p5.js setup
-  if (typeof setup === 'function') {
-    setup();
+        // Use consistent time based on start time for continuous animation
+        const currentTime = (Date.now() - this.startTime) / 1000.0;
+        
+        // Send uniform values to the shader
+        this.theShader.setUniform('resolution', [p.width, p.height]);
+        this.theShader.setUniform('time', currentTime);
+        this.theShader.setUniform('mouse', [p.mouseX, p.map(p.mouseY, 0, p.height, p.height, 0)]);
+
+        p.shader(this.theShader);
+        
+        // Create a simple animated shape for the header
+        p.translate(0, 0, 0);
+        p.push();
+        p.rotateY(currentTime * 1000 * 0.001);
+        p.rotateX(currentTime * 1000 * 0.0005);
+        p.sphere(15);
+        p.pop();
+      };
+    });
   }
 }
 
-// Try to initialize when script loads
+// Initialize the header shader
+let headerShaderInstance = null;
+
+function initHeaderShader() {
+  if (!headerShaderInstance) {
+    headerShaderInstance = new HeaderShader();
+  }
+}
+
+// Auto-initialize when script loads
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initShader);
+  document.addEventListener('DOMContentLoaded', initHeaderShader);
 } else {
-  // DOM already loaded
-  setTimeout(initShader, 50);
+  setTimeout(initHeaderShader, 50);
 } 

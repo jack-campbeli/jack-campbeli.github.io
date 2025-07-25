@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Misc
-permalink: /misc/
+title: Test
+permalink: /test/
 ---
 
 # Shader Graphic
