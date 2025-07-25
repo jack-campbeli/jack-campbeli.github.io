@@ -44,7 +44,7 @@ permalink: /resume/
 
 ## Technical Skills
 
-*[Proficient, Familiar/Learning]*
+*[***Proficient***, Familiar/Learning]*
 
 <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 20px 0;">
   <div>
@@ -79,7 +79,7 @@ permalink: /resume/
     <ul>
       <li><strong>Git/GitHub</strong></li>
       <li><em>UML Modeling</em></li>
-      <li><strong>C</strong></li>
+      <li><em>C</em></li>
     </ul>
   </div>
 </div>
@@ -146,4 +146,3 @@ permalink: /resume/
 **Flask Photo Sharing Application (2023)**: *Technologies: Flask, Jinja/Html, Python, MySQL Workbench*
 
 **[Flask Web Application (2022)](https://github.com/jack-campbeli/411-Project-Group-1)**: *Technologies: NASA and DALL-E APIs, Flask, Jinja, Python, SQLite, Bootstrap*
- 
