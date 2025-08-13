@@ -34,9 +34,9 @@ plugins:
 
 # Header pages (navigation)
 header_pages:
-  - posts.markdown
-  - resume.markdown
   - about.markdown
+  - resume.markdown
+  - posts.markdown
 
 # Exclude from processing.
 # The following items will not be processed, by default.
