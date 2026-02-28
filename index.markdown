@@ -1,19 +1,24 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: page
 title: Welcome
 ---
-Thanks for visiting my website! Here you'll find information about me and my work.
 
-# What You'll Find Here
+<div class="hero">
+  <p class="hero__intro">Hi, I'm <strong>Jack Campbell</strong> — a software engineer based in the San Francisco Bay Area.</p>
+  <p class="hero__sub">I build software, work with data, and enjoy the collaborative side of engineering.</p>
+</div>
 
-- **[About](/about/)** - Learn more about my background and experience
-- **[Posts](/posts/)** - Read my latest blog posts and updates
-
-<p>Feel free to explore and don't hesitate to reach out via the contact information in the footer.</p>
-
-<br>
-
-<p>🚧 <strong>Please Note:</strong> this site is a work in progress! Some pages may still be under construction. 🚧</p>
+<div class="nav-cards">
+  <a class="nav-card" href="/about/">
+    <span class="nav-card__label">About</span>
+    <span class="nav-card__desc">Background, interests, and who I am</span>
+  </a>
+  <a class="nav-card" href="/resume/">
+    <span class="nav-card__label">Resume</span>
+    <span class="nav-card__desc">Experience, skills, and education</span>
+  </a>
+  <a class="nav-card" href="/posts/">
+    <span class="nav-card__label">Posts</span>
+    <span class="nav-card__desc">Writing, projects, and updates</span>
+  </a>
+</div>

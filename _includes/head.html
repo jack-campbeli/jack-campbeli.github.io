@@ -8,6 +8,7 @@
   <link rel="icon" type="image/x-icon" href="{{ '/assets/favicon.svg' | relative_url }}">
   <!-- Load p5.js and the shader script in head for persistence -->
   <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.min.js"></script>
+  <script src="{{ '/assets/js/shader-common.js' | relative_url }}"></script>
   <script src="{{ '/assets/js/shader-graphic.js' | relative_url }}"></script>
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
