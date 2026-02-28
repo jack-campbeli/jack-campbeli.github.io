@@ -3,9 +3,13 @@ layout: page
 title: Resume
 permalink: /resume/
 ---
-<div style="text-align: center; margin-bottom: 30px;">
-  <h1 style="margin-bottom: 10px;">Jack William Lee Campbell</h1>
-  <p style="margin: 5px 0;">304 Borica Dr • Danville, CA 94526 • <a href="mailto:jackwilliamleecampbell@gmail.com">Email</a> • <a href="https://github.com/jack-campbeli">GitHub</a> • <a href="https://www.linkedin.com/in/jack-campbell-a392191a1/">LinkedIn</a> • (925) 997-2762</p>
+<div class="resume-header">
+  <h1 class="resume-header__name">Jack Campbell</h1>
+  <div class="resume-header__links">
+    <a href="mailto:jackwilliamleecampbell@gmail.com">Email</a>
+    <a href="https://github.com/jack-campbeli">GitHub</a>
+    <a href="https://www.linkedin.com/in/jack-campbell-a392191a1/">LinkedIn</a>
+  </div>
 </div>
 
 ---
@@ -40,44 +44,22 @@ permalink: /resume/
 
 ## Technical Skills
 
-*[***Proficient***, Familiar/Learning]*
-
-<div class="skills-grid">
-  <div>
-    <ul>
-      <li><strong>Python</strong></li>
-      <li><strong>Flask</strong></li>
-      <li><em>Java</em></li>
-    </ul>
-  </div>
-  <div>
-    <ul>
-      <li><strong>Pandas</strong></li>
-      <li><strong>Jinja/Html</strong></li>
-      <li><em>GCP</em></li>
-    </ul>
-  </div>
-  <div>
-    <ul>
-      <li><strong>R</strong></li>
-      <li><strong>Scrum</strong></li>
-      <li><em>React</em></li>
-    </ul>
-  </div>
-  <div>
-    <ul>
-      <li><strong>QA</strong></li>
-      <li><strong>SQL</strong></li>
-      <li><em>JavaScript</em></li>
-    </ul>
-  </div>
-  <div>
-    <ul>
-      <li><strong>Git/GitHub</strong></li>
-      <li><em>UML Modeling</em></li>
-      <li><em>C</em></li>
-    </ul>
-  </div>
+<div class="skill-chips">
+  <span class="skill-chip skill-chip--proficient">Python</span>
+  <span class="skill-chip skill-chip--proficient">Pandas</span>
+  <span class="skill-chip skill-chip--proficient">Flask</span>
+  <span class="skill-chip skill-chip--proficient">R</span>
+  <span class="skill-chip skill-chip--proficient">SQL</span>
+  <span class="skill-chip skill-chip--proficient">QA</span>
+  <span class="skill-chip skill-chip--proficient">Git / GitHub</span>
+  <span class="skill-chip skill-chip--proficient">Scrum</span>
+  <span class="skill-chip skill-chip--proficient">Jinja / HTML</span>
+  <span class="skill-chip">Java</span>
+  <span class="skill-chip">GCP</span>
+  <span class="skill-chip">React</span>
+  <span class="skill-chip">JavaScript</span>
+  <span class="skill-chip">UML Modeling</span>
+  <span class="skill-chip">C</span>
 </div>
 
 ---
@@ -134,16 +116,30 @@ permalink: /resume/
 
 ## Highlighted University Projects
 
-**[Department of Defense Research (2023)](https://github.com/jack-campbeli/DoD-ds701)**: Researched annual spending and budgetary resources of the Department of Defense in addition to the associated sub-agencies. Utilized the USASpending.gov API to query and plot annual department budget and spending, sub-agency spending, and the largest contracts per NAICS code.
+<div class="project-card">
+  <a class="project-card__title" href="https://github.com/jack-campbeli/DoD-ds701">Department of Defense Research (2023)</a>
+  <span class="project-card__tech">Python/Jupyter · Seaborn · USASpending.gov API</span>
+  <p>Researched annual spending and budgetary resources of the Department of Defense and associated sub-agencies. Utilized the USASpending.gov API to query and plot annual department budget and spending, sub-agency spending, and the largest contracts per NAICS code.</p>
+</div>
 
-*Technologies: Python/Jupyter, Seaborn, [USASpending.gov API](https://api.usaspending.gov/)*
+<div class="project-card">
+  <a class="project-card__title" href="https://github.com/jack-campbeli/Synth-Sense">Boston University SPARK! Fellowship — React Application (2023)</a>
+  <span class="project-card__tech">React.js · ml5 · HTML/CSS · Jira · Miro</span>
+  <p>As Scrum Lead, led a team of students to build an interactive <a href="https://synth-sense1.web.app/">application</a> combining computer vision libraries with various environmental APIs to create generative art. Facilitated Scrum meetings, represented the team with industry mentors, and significantly contributed to software development.</p>
+</div>
 
-**Boston University SPARK! Fellowship [React Application (2023)](https://github.com/jack-campbeli/Synth-Sense)**: As Scrum Lead, led a team of students to build an interactive [application](https://synth-sense1.web.app/) that combined the use of computer vision libraries with various environmental APIs to create generative art. Facilitated Scrum meetings, represented the team with industry mentors to understand and convey their requirements and feedback, and significantly contributed to software development.
+<div class="project-card">
+  <a class="project-card__title" href="https://docs.google.com/document/d/11_b9v9RKYkDU46_3_Bn7h7nzL9OEoOs7Ds2ices05X4/edit?usp=sharing">Research on Student LLM Usage (2023)</a>
+  <span class="project-card__tech">Qualitative Research</span>
+  <p>Formulated and executed a qualitative research study on student usage and sentiment of LLMs in university settings, aiming to better align school policy with students' needs and desires.</p>
+</div>
 
-*Technologies: React.js, ml5, HTML/CSS, Jira, Miro*
+<div class="project-card">
+  <span class="project-card__title">Flask Photo Sharing Application (2023)</span>
+  <span class="project-card__tech">Flask · Jinja/HTML · Python · MySQL Workbench</span>
+</div>
 
-**[Research on Student LLM usage (2023)](https://docs.google.com/document/d/11_b9v9RKYkDU46_3_Bn7h7nzL9OEoOs7Ds2ices05X4/edit?usp=sharing)**: Formulated and executed a qualitative research study on student usage and sentiment of LLMs in university settings, aiming to better align school policy with students needs and desires.
-
-**Flask Photo Sharing Application (2023)**: *Technologies: Flask, Jinja/Html, Python, MySQL Workbench*
-
-**[Flask Web Application (2022)](https://github.com/jack-campbeli/411-Project-Group-1)**: *Technologies: NASA and DALL-E APIs, Flask, Jinja, Python, SQLite, Bootstrap*
+<div class="project-card">
+  <a class="project-card__title" href="https://github.com/jack-campbeli/411-Project-Group-1">Flask Web Application (2022)</a>
+  <span class="project-card__tech">NASA API · DALL-E API · Flask · Jinja · Python · SQLite · Bootstrap</span>
+</div>
