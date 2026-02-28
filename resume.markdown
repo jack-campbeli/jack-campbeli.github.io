@@ -12,33 +12,29 @@ permalink: /resume/
 
 ## Education
 
-<table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-  <tr>
-    <td style="width: 70%; padding-right: 20px; vertical-align: top; border: none;">
-      <strong>BOSTON UNIVERSITY</strong><br>
-      <strong>M.S. Data Science</strong>; <em>Dean's List: Fall 2023</em><br><br>
-      Relevant Coursework: GCP principles, classifiers, <a href="https://docs.google.com/document/d/1NOsExgqH_jEV_oVRPdMx0JZHlDWQFi6wJADeJ9WZqEo/edit?tab=t.0">OLS regression</a>, reinforcement learning deep learning principles, <a href="https://docs.google.com/document/d/1LpfRWO9o8MoUjylvxIJE1Ap2WbXYzH2JCeBXDRTwnvU/edit?tab=t.0">SARIMA modeling</a>, cryptography principles.
-    </td>
-    <td style="width: 30%; text-align: right; vertical-align: top; border: none;">
-      <strong>Boston, MA</strong><br>
-      May 2024
-    </td>
-  </tr>
-</table>
+<div class="resume-entry">
+  <div class="resume-entry__body">
+    <strong>BOSTON UNIVERSITY</strong><br>
+    <strong>M.S. Data Science</strong>; <em>Dean's List: Fall 2023</em><br><br>
+    Relevant Coursework: GCP principles, classifiers, <a href="https://docs.google.com/document/d/1NOsExgqH_jEV_oVRPdMx0JZHlDWQFi6wJADeJ9WZqEo/edit?tab=t.0">OLS regression</a>, reinforcement learning deep learning principles, <a href="https://docs.google.com/document/d/1LpfRWO9o8MoUjylvxIJE1Ap2WbXYzH2JCeBXDRTwnvU/edit?tab=t.0">SARIMA modeling</a>, cryptography principles.
+  </div>
+  <div class="resume-entry__meta">
+    <strong>Boston, MA</strong><br>
+    May 2024
+  </div>
+</div>
 
-<table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-  <tr>
-    <td style="width: 70%; padding-right: 20px; vertical-align: top; border: none;">
-      <strong>BOSTON UNIVERSITY</strong><br>
-      <strong>B.A. Computer Science</strong>; <em>Dean's List: Fall 2022</em><br><br>
-      Relevant Coursework: Data structures and algorithms, software engineering principles/OOP, SQL-like database principles, scrum/agile methodologies and projects.
-    </td>
-    <td style="width: 30%; text-align: right; vertical-align: top; border: none;">
-      <strong>Boston, MA</strong><br>
-      May 2023
-    </td>
-  </tr>
-</table>
+<div class="resume-entry">
+  <div class="resume-entry__body">
+    <strong>BOSTON UNIVERSITY</strong><br>
+    <strong>B.A. Computer Science</strong>; <em>Dean's List: Fall 2022</em><br><br>
+    Relevant Coursework: Data structures and algorithms, software engineering principles/OOP, SQL-like database principles, scrum/agile methodologies and projects.
+  </div>
+  <div class="resume-entry__meta">
+    <strong>Boston, MA</strong><br>
+    May 2023
+  </div>
+</div>
 
 ---
 
@@ -46,7 +42,7 @@ permalink: /resume/
 
 *[***Proficient***, Familiar/Learning]*
 
-<div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 20px 0;">
+<div class="skills-grid">
   <div>
     <ul>
       <li><strong>Python</strong></li>
@@ -88,46 +84,51 @@ permalink: /resume/
 
 ## Relevant Experience
 
-<table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-  <tr>
-    <td style="width: 70%; padding-right: 20px; vertical-align: top; border: none;">
-      <strong>VWHousen & Associates - Project Engineer/Software Engineer</strong><br><br>
-      Independently led technical development and project management efforts to design, implement, and deploy custom software solutions automating municipal water and wastewater infrastructure workflows. Collaborated closely with stakeholders and civil engineers to identify key automation opportunities, translate operational requirements into effective software solutions, and significantly enhance productivity and efficiency by reducing critical engineering processes from weeks to days.<br><br>
-      <em>Technologies: Python, PyQt5, Pandas, Pulp, NumPy, PyInstaller, Excel, OOPJ</em>
-    </td>
-    <td style="width: 30%; text-align: right; vertical-align: top; border: none;">
-      <strong>Walnut Creek, CA</strong><br>
-      August 2024 - Current
-    </td>
-  </tr>
-</table>
+<div class="resume-entry">
+  <div class="resume-entry__body">
+    <strong>Tendo Systems - Associate Software Engineer</strong><br><br>
+    Contributing to core platform development by designing and implementing new algorithms and driving QDI data pipeline fixes to improve data quality and reliability.
+  </div>
+  <div class="resume-entry__meta">
+    <strong>Remote</strong><br>
+    November 2025 - Current
+  </div>
+</div>
 
-<table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-  <tr>
-    <td style="width: 70%; padding-right: 20px; vertical-align: top; border: none;">
-      <strong>BOSTON UNIVERSITY - CDS DS 719 Inaugural Teaching Assistant</strong><br><br>
-      Drove course design by actively shaping structure, content, and grading through direct collaboration with the professor. Led efforts to shift the course toward a hands-on, communication-focused format that equipped students to engage effectively with diverse, non-technical stakeholders in applied data science and computer science contexts.
-    </td>
-    <td style="width: 30%; text-align: right; vertical-align: top; border: none;">
-      <strong>Boston, MA</strong><br>
-      February - May 2024
-    </td>
-  </tr>
-</table>
+<div class="resume-entry">
+  <div class="resume-entry__body">
+    <strong>VWHousen & Associates - Project Engineer/Software Engineer</strong><br><br>
+    Independently led technical development and project management efforts to design, implement, and deploy custom software solutions automating municipal water and wastewater infrastructure workflows. Collaborated closely with stakeholders and civil engineers to identify key automation opportunities, translate operational requirements into effective software solutions, and significantly enhance productivity and efficiency by reducing critical engineering processes from weeks to days.<br><br>
+    <em>Technologies: Python, PyQt5, Pandas, Pulp, NumPy, PyInstaller, Excel, OOPJ</em>
+  </div>
+  <div class="resume-entry__meta">
+    <strong>Walnut Creek, CA</strong><br>
+    August 2024 – October 2025
+  </div>
+</div>
 
-<table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-  <tr>
-    <td style="width: 70%; padding-right: 20px; vertical-align: top; border: none;">
-      <strong>MassMutual Data Days 4 Good 2024 Hackathon: BU DEI - Developer/Project Lead</strong><br><br>
-      Developed and deployed an interactive <a href="https://github.com/BU-Spark/dd4g-bu-tech-majors-survey">Shiny application</a> in a 4-day sprint with a mixed undergraduate and graduate team, enabling dynamic exploration and visualization of student survey data. Managed project scoping, designed intuitive data interactions, and collaborated closely with stakeholders and team members to align visualization tools with survey objectives.<br><br>
-      <em>Technologies: R, Shiny</em>
-    </td>
-    <td style="width: 30%; text-align: right; vertical-align: top; border: none;">
-      <strong>Boston, MA</strong><br>
-      March 2024
-    </td>
-  </tr>
-</table>
+<div class="resume-entry">
+  <div class="resume-entry__body">
+    <strong>BOSTON UNIVERSITY - CDS DS 719 Inaugural Teaching Assistant</strong><br><br>
+    Drove course design by actively shaping structure, content, and grading through direct collaboration with the professor. Led efforts to shift the course toward a hands-on, communication-focused format that equipped students to engage effectively with diverse, non-technical stakeholders in applied data science and computer science contexts.
+  </div>
+  <div class="resume-entry__meta">
+    <strong>Boston, MA</strong><br>
+    February – May 2024
+  </div>
+</div>
+
+<div class="resume-entry">
+  <div class="resume-entry__body">
+    <strong>MassMutual Data Days 4 Good 2024 Hackathon: BU DEI - Developer/Project Lead</strong><br><br>
+    Developed and deployed an interactive <a href="https://github.com/BU-Spark/dd4g-bu-tech-majors-survey">Shiny application</a> in a 4-day sprint with a mixed undergraduate and graduate team, enabling dynamic exploration and visualization of student survey data. Managed project scoping, designed intuitive data interactions, and collaborated closely with stakeholders and team members to align visualization tools with survey objectives.<br><br>
+    <em>Technologies: R, Shiny</em>
+  </div>
+  <div class="resume-entry__meta">
+    <strong>Boston, MA</strong><br>
+    March 2024
+  </div>
+</div>
 
 ---
 
