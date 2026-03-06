@@ -1,0 +1,9 @@
+.container {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.container canvas {
+  display: block;
+  border-radius: 6px;
+}

@@ -1,0 +1,27 @@
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.skillChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 1rem 0 1.5rem;
+}

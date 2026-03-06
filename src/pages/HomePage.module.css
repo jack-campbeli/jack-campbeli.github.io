@@ -1,0 +1,28 @@
+.hero {
+  margin: 1.5rem 0 2rem;
+}
+
+.intro {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.navCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .navCards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,25 @@
+.intro {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.text {
+  flex: 1;
+}
+
+.photo {
+  width: 200px;
+  height: 250px;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .intro {
+    flex-direction: column;
+  }
+}

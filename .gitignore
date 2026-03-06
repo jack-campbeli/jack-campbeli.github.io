@@ -1,6 +1,9 @@
+node_modules
+dist
+*.local
+.DS_Store
 _site
+vendor
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-vendor
-Gemfile.lockbundle exec jekyll serve
