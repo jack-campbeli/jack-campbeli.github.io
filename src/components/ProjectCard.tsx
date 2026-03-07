@@ -11,14 +11,16 @@ interface ProjectCardProps {
 export default function ProjectCard({ title, href, tech, children }: ProjectCardProps) {
   return (
     <div className={styles.card}>
-      {href ? (
-        <a className={styles.title} href={href} target="_blank" rel="noopener noreferrer">
-          {title}
-        </a>
-      ) : (
-        <span className={styles.title}>{title}</span>
-      )}
-      <span className={styles.tech}>{tech}</span>
+      <div className={styles.header}>
+        {href ? (
+          <a className={styles.title} href={href} target="_blank" rel="noopener noreferrer">
+            {title}
+          </a>
+        ) : (
+          <span className={styles.title}>{title}</span>
+        )}
+        <span className={styles.tech}>{tech}</span>
+      </div>
       {children}
     </div>
   )

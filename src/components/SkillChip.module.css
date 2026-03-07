@@ -1,13 +1,17 @@
 .chip {
-  padding: 0.3rem 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.9rem;
   border: 1px solid var(--color-border);
-  border-radius: 20px;
-  font-size: 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--color-muted);
 }
 
 .proficient {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  font-weight: 600;
+  border-color: rgba(199, 93, 53, 0.2);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
 }

@@ -5,13 +5,70 @@
 }
 
 .page-content {
-  padding: 30px 0;
+  padding: clamp(28px, 4vw, 48px) 0 clamp(56px, 8vw, 92px);
   flex: 1;
+  position: relative;
 }
 
 .page-title {
-  font-size: 1.6rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--color-border);
-  margin-bottom: 1.75rem;
+  font-size: clamp(2.3rem, 7vw, 4.4rem);
+  line-height: 0.96;
+  margin-bottom: 0.5rem;
+}
+
+.page-intro {
+  max-width: 40rem;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap-lg);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 252, 247, 0.82);
+  box-shadow: var(--shadow-soft);
+}
+
+.section-heading {
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  margin-bottom: 0.8rem;
+}
+
+.section-copy {
+  max-width: 42rem;
+  color: var(--color-muted);
+  font-size: 1rem;
+}
+
+.content-narrow {
+  max-width: var(--content-max-width);
+}
+
+@media screen and (max-width: 720px) {
+  .page-title {
+    line-height: 1;
+  }
 }

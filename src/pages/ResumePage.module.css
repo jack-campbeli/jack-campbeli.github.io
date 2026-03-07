@@ -1,27 +1,77 @@
-.header {
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid var(--color-border);
+.hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(24px, 5vw, 36px);
 }
 
 .name {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem;
+  font-size: clamp(2.8rem, 7vw, 4.8rem);
+  line-height: 0.95;
+  margin: 0;
 }
 
 .links {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  font-size: 0.95rem;
+  gap: 12px;
   flex-wrap: wrap;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--color-text);
+  font-size: 0.94rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--color-text);
+}
+
+.section {
+  padding: 28px;
+}
+
+.sectionHeader {
+  margin-bottom: 18px;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.entries {
+  display: grid;
+  gap: 16px;
 }
 
 .skillChips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 1rem 0 1.5rem;
+  gap: 10px;
+}
+
+.projectGrid {
+  display: grid;
+  gap: 16px;
+}
+
+@media screen and (max-width: 760px) {
+  .hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 22px;
+  }
 }

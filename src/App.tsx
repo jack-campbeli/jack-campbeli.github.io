@@ -1,12 +1,10 @@
-import { lazy, Suspense, useEffect } from 'react'
+import { lazy, Suspense, useEffect, useLayoutEffect } from 'react'
 import { matchRoutes, useLocation, useRoutes, type RouteObject } from 'react-router-dom'
 import Layout from './components/Layout'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ResumePage = lazy(() => import('./pages/ResumePage'))
-const PostsPage = lazy(() => import('./pages/PostsPage'))
-const TestPage = lazy(() => import('./pages/TestPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
 const siteTitle = 'Jack Campbell'
@@ -34,16 +32,6 @@ const routes: AppRoute[] = [
     handle: { title: 'Resume' },
   },
   {
-    path: '/posts',
-    element: <PostsPage />,
-    handle: { title: 'Posts' },
-  },
-  {
-    path: '/test',
-    element: <TestPage />,
-    handle: { title: 'Test' },
-  },
-  {
     path: '*',
     element: <NotFoundPage />,
     handle: { title: '404 Not Found' },
@@ -54,8 +42,33 @@ export default function App() {
   const location = useLocation()
   const routeElement = useRoutes(routes)
 
+  const resetScrollPosition = () => {
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+    window.scrollTo(0, 0)
+    document.querySelector('main')?.scrollIntoView({ block: 'start' })
+  }
+
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual'
+    }
+  }, [])
+
+  useLayoutEffect(() => {
+    resetScrollPosition()
+
+    const frameId = window.requestAnimationFrame(() => {
+      resetScrollPosition()
+    })
+    const timeoutId = window.setTimeout(() => {
+      resetScrollPosition()
+    })
+
+    return () => {
+      window.cancelAnimationFrame(frameId)
+      window.clearTimeout(timeoutId)
+    }
   }, [location.pathname])
 
   useEffect(() => {
@@ -71,7 +84,7 @@ export default function App() {
 
   return (
     <Layout>
-      <Suspense fallback={<div />}>
+      <Suspense fallback={<div className="route-loader" aria-hidden="true" />}>
         {routeElement}
       </Suspense>
     </Layout>

@@ -10,12 +10,11 @@ interface ResumeEntryProps {
 export default function ResumeEntry({ children, location, date }: ResumeEntryProps) {
   return (
     <div className={styles.entry}>
-      <div className={styles.body}>{children}</div>
       <div className={styles.meta}>
-        <strong>{location}</strong>
-        <br />
-        {date}
+        <strong className={styles.location}>{location}</strong>
+        <span className={styles.date}>{date}</span>
       </div>
+      <div className={styles.body}>{children}</div>
     </div>
   )
 }
