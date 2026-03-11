@@ -13,8 +13,22 @@ export default function ResumePage() {
         </div>
         <div className={styles.links}>
           <a href="mailto:jackwilliamleecampbell@gmail.com">Email</a>
-          <a href="https://github.com/jack-campbeli" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/jack-campbell-a392191a1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a
+            className={styles.githubLink}
+            href="https://github.com/jack-campbeli"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          <a
+            className={styles.linkedinLink}
+            href="https://www.linkedin.com/in/jack-campbell-a392191a1/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
         </div>
       </section>
 

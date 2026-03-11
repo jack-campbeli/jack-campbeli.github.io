@@ -49,6 +49,7 @@
   font-size: 0.92rem;
   font-weight: 700;
   text-decoration: none;
+  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
 }
 
 .primaryAction {
@@ -58,7 +59,9 @@
 }
 
 .primaryAction:hover {
+  background: var(--color-cta-hover);
   color: var(--color-cta-text);
+  transform: translateY(-1px);
 }
 
 .secondaryAction {
@@ -68,7 +71,10 @@
 }
 
 .secondaryAction:hover {
+  background: var(--color-surface-overlay-strong);
+  border-color: rgba(222, 132, 95, 0.34);
   color: var(--color-text);
+  transform: translateY(-1px);
 }
 
 .heroPanel {
