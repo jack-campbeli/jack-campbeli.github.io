@@ -30,10 +30,26 @@
   font-size: 0.94rem;
   font-weight: 700;
   text-decoration: none;
+  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
 }
 
 .links a:hover {
+  background: var(--color-surface-overlay-strong);
+  border-color: rgba(222, 132, 95, 0.34);
   color: var(--color-text);
+  transform: translateY(-1px);
+}
+
+.links .githubLink:hover {
+  border-color: #374151;
+}
+
+.links .linkedinLink:hover {
+  border-color: #0a66c2;
+}
+
+:global(:root[data-theme='dark']) .links .githubLink:hover {
+  border-color: #6b7280;
 }
 
 .section {
