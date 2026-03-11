@@ -25,7 +25,7 @@
   padding: 0 16px;
   border: 1px solid var(--color-border);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--color-surface-inset);
   color: var(--color-text);
   font-size: 0.94rem;
   font-weight: 700;

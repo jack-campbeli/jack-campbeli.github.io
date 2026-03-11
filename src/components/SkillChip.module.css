@@ -4,7 +4,7 @@
   padding: 0.38rem 0.85rem;
   border: 1px solid var(--color-border);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--color-surface-chip);
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--color-muted);
@@ -16,7 +16,7 @@
 }
 
 .proficient {
-  border-color: rgba(199, 93, 53, 0.2);
+  border-color: rgba(222, 132, 95, 0.28);
   background: var(--color-accent-soft);
   color: var(--color-accent-strong);
 }

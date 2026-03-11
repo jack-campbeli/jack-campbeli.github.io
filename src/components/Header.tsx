@@ -8,9 +8,18 @@ const navLinks = [
   { to: '/resume', label: 'Resume' },
 ]
 
-const Header = forwardRef<HTMLElement>(function Header(_, ref) {
+type HeaderProps = {
+  theme: 'light' | 'dark'
+  onThemeToggle: () => void
+}
+
+const Header = forwardRef<HTMLElement, HeaderProps>(function Header(
+  { theme, onThemeToggle },
+  ref,
+) {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
+  const nextThemeLabel = theme === 'light' ? 'dark' : 'light'
 
   useEffect(() => {
     setMenuOpen(false)
@@ -55,6 +64,49 @@ const Header = forwardRef<HTMLElement>(function Header(_, ref) {
           </button>
 
           <div className={styles.actions}>
+            <button
+              className={styles.themeToggle}
+              onClick={onThemeToggle}
+              aria-label={`Switch to ${nextThemeLabel} mode`}
+              title={`Switch to ${nextThemeLabel} mode`}
+              type="button"
+            >
+              {theme === 'light' ? (
+                <svg
+                  className={styles.themeIcon}
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3.25v2.1M12 18.65v2.1M5.81 5.81l1.48 1.48M16.71 16.71l1.48 1.48M3.25 12h2.1M18.65 12h2.1M5.81 18.19l1.48-1.48M16.71 7.29l1.48-1.48M12 7.1a4.9 4.9 0 1 0 0 9.8a4.9 4.9 0 0 0 0-9.8Z"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className={styles.themeIcon}
+                  viewBox="0 0 24 24"
+                  width="18"
+                  height="18"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M21 12.2A8.8 8.8 0 1 1 11.8 3a6.9 6.9 0 0 0 9.2 9.2Z"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              )}
+            </button>
             <nav
               id="site-nav"
               className={`${styles.nav} ${menuOpen ? styles.navOpen : ''}`}
