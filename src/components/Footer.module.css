@@ -49,6 +49,13 @@
   font-size: 0.95rem;
 }
 
+@supports (-moz-appearance: none) {
+  .inner {
+    background: var(--color-firefox-surface);
+    box-shadow: var(--shadow-firefox-soft);
+  }
+}
+
 @media screen and (max-width: 720px) {
   .inner {
     align-items: flex-start;

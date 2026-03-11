@@ -1,7 +1,5 @@
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
+  position: relative;
   padding: 18px 0 0;
 }
 
@@ -13,9 +11,8 @@
   padding: 16px 18px;
   border: 1px solid var(--color-border);
   border-radius: 999px;
-  background: rgba(255, 252, 247, 0.86);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(16px);
+  background: rgba(255, 252, 247, 0.98);
+  box-shadow: 0 10px 24px rgba(71, 51, 36, 0.06);
 }
 
 .brand {
@@ -132,6 +129,21 @@
   transform: translateY(-1px);
 }
 
+@supports (-moz-appearance: none) {
+  .header {
+    will-change: transform;
+  }
+
+  .inner {
+    background: #fffcf7;
+    box-shadow: none;
+  }
+
+  .contactLink {
+    box-shadow: none;
+  }
+}
+
 @media screen and (max-width: 780px) {
   .menuButton {
     display: block;
@@ -139,6 +151,7 @@
 
   .actions {
     gap: 10px;
+    position: relative;
   }
 
   .nav {

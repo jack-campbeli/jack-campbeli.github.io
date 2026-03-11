@@ -33,3 +33,16 @@
   color: var(--color-muted);
   line-height: 1.6;
 }
+
+@supports (-moz-appearance: none) {
+  .card {
+    background: var(--color-firefox-surface);
+    box-shadow: var(--shadow-firefox-soft);
+    transition: border-color 0.18s ease, transform 0.18s ease, background-color 0.18s ease;
+  }
+
+  .card:hover {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(71, 51, 36, 0.1);
+  }
+}

@@ -60,6 +60,13 @@
   gap: 10px;
 }
 
+.entryTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
 .projectGrid {
   display: grid;
   gap: 16px;

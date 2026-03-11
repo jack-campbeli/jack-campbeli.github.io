@@ -21,9 +21,9 @@ export default function AboutPage() {
             both technically sharp and genuinely useful to the people around it.
           </p>
           <p>
-            I graduated from Boston University after completing both my
-            undergraduate and master&apos;s degrees, and I&apos;m currently
-            working as an Associate Software Engineer at Tendo Systems.
+            I completed both my B.A. in Computer Science and M.S. in Data
+            Science at Boston University, and I&apos;m currently working as an
+            Associate Software Engineer at Tendo Systems.
           </p>
           <p>
             I like digging into technical problems, but I care just as much

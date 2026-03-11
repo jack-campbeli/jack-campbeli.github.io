@@ -21,8 +21,27 @@ body {
     linear-gradient(180deg, var(--color-bg) 0%, #f7f0e6 100%);
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
   min-width: 320px;
+}
+
+@supports (-moz-appearance: none) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: linear-gradient(180deg, var(--color-bg) 0%, #f7f0e6 100%);
+  }
+
+  :root {
+    --color-border: #ddd8d3;
+    --color-firefox-surface: #fefbf7;
+    --shadow-firefox-soft: 0 1px 4px rgba(71, 51, 36, 0.06);
+  }
+
+  #root {
+    isolation: auto;
+  }
 }
 
 a {

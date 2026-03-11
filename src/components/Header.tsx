@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { forwardRef, useEffect, useState, type MouseEvent } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import styles from './Header.module.css'
 
@@ -8,7 +8,7 @@ const navLinks = [
   { to: '/resume', label: 'Resume' },
 ]
 
-export default function Header() {
+const Header = forwardRef<HTMLElement>(function Header(_, ref) {
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
 
@@ -16,8 +16,21 @@ export default function Header() {
     setMenuOpen(false)
   }, [location.pathname])
 
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, to: string) => {
+    if (location.pathname !== to) {
+      return
+    }
+
+    event.preventDefault()
+    setMenuOpen(false)
+    document.querySelector('main')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+
   return (
-    <header className={styles.header}>
+    <header ref={ref} className={styles.header}>
       <div className="wrapper">
         <div className={styles.inner}>
           <Link to="/" className={styles.brand}>
@@ -50,6 +63,7 @@ export default function Header() {
               <NavLink
                 key={link.to}
                 to={link.to}
+                onClick={(event) => handleNavClick(event, link.to)}
                 className={({ isActive }) =>
                   `${styles.navLink} ${isActive ? styles.navLinkActive : ''}`
                 }
@@ -70,4 +84,6 @@ export default function Header() {
       </div>
     </header>
   )
-}
+})
+
+export default Header

@@ -41,3 +41,10 @@
 .card p:last-child {
   margin-bottom: 0;
 }
+
+@supports (-moz-appearance: none) {
+  .card {
+    background: var(--color-firefox-surface);
+    box-shadow: var(--shadow-firefox-soft);
+  }
+}

@@ -163,10 +163,11 @@ The header should feel compact, friendly, and quietly premium.
 
 Current direction:
 
-- pill-shaped surfaced container
-- `JC` brand mark plus name/role
-- simple route nav (`Home`, `About`, `Resume`)
-- optional email CTA on larger screens
+- pill-shaped surfaced container, sticky
+- brand mark: `JC` monogram + stacked `Jack Campbell` / `Software engineer`
+- simple route nav: `Home`, `About`, `Resume` with active-state styling
+- `Say hello` mailto CTA on larger screens (hidden or collapsed on mobile)
+- mobile: hamburger toggle reveals the nav vertically
 
 Usage rules:
 
@@ -191,9 +192,11 @@ The homepage hero should be inviting and restrained.
 
 Current direction:
 
-- two-column layout on larger screens
-- left side for intro copy and actions
-- right side for compact supporting metadata (`Currently`, `Focus`, `Style`)
+- `section-card` wrapping a two-column layout on larger screens
+- left side: eyebrow label → full-sentence hero title → short intro paragraph → two action buttons (`View resume` primary, `More about me` secondary)
+- right side: compact panel with three labeled rows: `Currently`, `Focus`, `Style` — each a label + bold value
+- eyebrow reads `Bay Area software engineer`
+- hero title is a sentence, not a personal headline (e.g. "Thoughtful software, clean interfaces…")
 
 Usage rules:
 
@@ -201,9 +204,21 @@ Usage rules:
 - supporting metadata should read as secondary, not like three equal feature cards
 - action buttons should support the intro, not dominate it
 
+### "How I work" section
+
+Sits below the hero. Three value cards in a grid, each a `section-card`.
+
+Current direction:
+
+- eyebrow + section heading + section copy intro block
+- three equal cards: `Build with structure`, `Work well with others`, `Keep the details smooth`
+- cards contain an h3 and a short paragraph; no icons or decorative elements
+
 ### Nav cards
 
-Nav cards should act as clean entry points to key pages or contact actions.
+Nav cards act as clean entry points to key pages or contact actions. On the homepage they appear in a "Start here" section (eyebrow `Start here`, heading `A quick way around the site`).
+
+Current set: `About`, `Resume`, `Contact` (mailto link).
 
 Usage rules:
 
@@ -224,6 +239,14 @@ Usage rules:
 ### About page
 
 The About page should feel personal but still aligned with the rest of the system.
+
+Current direction:
+
+- hero `section-card` with two-column layout: left is the profile photo, right is copy
+- right side: eyebrow (`About`) → `page-title` (`Hi, I'm Jack.`) → lead paragraph → 2–3 body paragraphs → two action links (`View resume` primary, `Get in touch` secondary)
+- below the hero: a two-card grid using `section-card`
+  - first card: `What matters to me` — eyebrow + section heading + bullet list of values
+  - second card: `Snapshot` — eyebrow + labeled rows (`Based in`, `Studied at`, `Interested in`) matching the panel pattern used in the homepage hero
 
 Usage rules:
 

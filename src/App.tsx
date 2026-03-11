@@ -43,10 +43,17 @@ export default function App() {
   const routeElement = useRoutes(routes)
 
   const resetScrollPosition = () => {
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
-    window.scrollTo(0, 0)
-    document.querySelector('main')?.scrollIntoView({ block: 'start' })
+    const previousHtmlScrollBehavior = document.documentElement.style.scrollBehavior
+    const previousBodyScrollBehavior = document.body.style.scrollBehavior
+
+    document.documentElement.style.scrollBehavior = 'auto'
+    document.body.style.scrollBehavior = 'auto'
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+
+    window.requestAnimationFrame(() => {
+      document.documentElement.style.scrollBehavior = previousHtmlScrollBehavior
+      document.body.style.scrollBehavior = previousBodyScrollBehavior
+    })
   }
 
   useEffect(() => {
@@ -57,18 +64,6 @@ export default function App() {
 
   useLayoutEffect(() => {
     resetScrollPosition()
-
-    const frameId = window.requestAnimationFrame(() => {
-      resetScrollPosition()
-    })
-    const timeoutId = window.setTimeout(() => {
-      resetScrollPosition()
-    })
-
-    return () => {
-      window.cancelAnimationFrame(frameId)
-      window.clearTimeout(timeoutId)
-    }
   }, [location.pathname])
 
   useEffect(() => {

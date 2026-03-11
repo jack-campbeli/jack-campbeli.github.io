@@ -6,7 +6,7 @@ import styles from './HomePage.module.css'
 export default function HomePage() {
   return (
     <div className="page-shell">
-      <section className={`${styles.hero} section-card`}>
+      <section className={`${styles.hero} ${styles.heroSurface} section-card`}>
         <div className={styles.heroCopy}>
           <p className="eyebrow">Bay Area software engineer</p>
           <h1 className={styles.heroTitle}>
@@ -14,9 +14,9 @@ export default function HomePage() {
             feels easy to be part of.
           </h1>
           <p className={styles.heroText}>
-            I&apos;m Jack Campbell. I enjoy building reliable systems, shaping
-            approachable product experiences, and helping teams move from fuzzy
-            ideas to polished outcomes.
+            I&apos;m Jack Campbell. I build reliable systems with a background
+            in software engineering and data science, and I like helping teams
+            move from fuzzy ideas to polished outcomes.
           </p>
 
           <div className={styles.heroActions}>
