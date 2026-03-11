@@ -1,10 +1,19 @@
 :root {
   --font-sans: 'Manrope', 'Avenir Next', 'Segoe UI', sans-serif;
+  color-scheme: light;
   --color-bg: #fbf7f2;
+  --color-bg-end: #f7f0e6;
   --color-bg-strong: #f2e8db;
   --color-surface: #fffdf9;
   --color-surface-soft: #f5ede2;
   --color-surface-muted: #efe7da;
+  --color-surface-elevated: rgba(255, 252, 247, 0.82);
+  --color-surface-strong: rgba(255, 252, 247, 0.96);
+  --color-surface-overlay: rgba(255, 255, 255, 0.82);
+  --color-surface-overlay-strong: rgba(255, 255, 255, 0.94);
+  --color-surface-panel: #fffaf5;
+  --color-surface-inset: rgba(255, 255, 255, 0.72);
+  --color-surface-chip: rgba(255, 255, 255, 0.72);
   --color-text: #233136;
   --color-muted: #5f6d71;
   --color-border: rgba(35, 49, 54, 0.12);
@@ -13,8 +22,21 @@
   --color-accent-soft: #f6ddd1;
   --color-link: #2b6f8b;
   --color-link-strong: #1f576d;
+  --color-cta-bg: #233136;
+  --color-cta-hover: #182124;
+  --color-cta-text: #fffdf9;
+  --color-focus: rgba(43, 111, 139, 0.45);
+  --color-selection: rgba(199, 93, 53, 0.18);
+  --color-glow-warm: rgba(230, 163, 118, 0.16);
+  --color-glow-cool: rgba(104, 166, 181, 0.16);
+  --color-blob-warm: rgba(230, 163, 118, 0.22);
+  --color-blob-cool: rgba(110, 170, 184, 0.18);
+  --color-brand-text: #fffdf9;
   --shadow-soft: 0 18px 44px rgba(71, 51, 36, 0.08);
   --shadow-lift: 0 20px 48px rgba(71, 51, 36, 0.12);
+  --shadow-inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --color-accent-hover-border: rgba(222, 132, 95, 0.34);
+  --color-nav-active-ring: rgba(42, 58, 63, 0.08);
   --radius-sm: 16px;
   --radius-md: 24px;
   --radius-lg: 30px;
@@ -23,4 +45,44 @@
   --content-max-width: 760px;
   --section-gap: clamp(24px, 4vw, 40px);
   --section-gap-lg: clamp(40px, 7vw, 72px);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: #12181b;
+  --color-bg-end: #0c1013;
+  --color-bg-strong: #172126;
+  --color-surface: #182126;
+  --color-surface-soft: #223038;
+  --color-surface-muted: #263740;
+  --color-surface-elevated: rgba(24, 33, 38, 0.86);
+  --color-surface-strong: rgba(24, 33, 38, 0.96);
+  --color-surface-overlay: rgba(34, 48, 56, 0.74);
+  --color-surface-overlay-strong: rgba(34, 48, 56, 0.9);
+  --color-surface-panel: #1d2a30;
+  --color-surface-inset: rgba(34, 48, 56, 0.72);
+  --color-surface-chip: rgba(29, 42, 48, 0.78);
+  --color-text: #edf1ee;
+  --color-muted: #a8b6b8;
+  --color-border: rgba(237, 241, 238, 0.14);
+  --color-accent: #de845f;
+  --color-accent-strong: #f0b090;
+  --color-accent-soft: rgba(222, 132, 95, 0.18);
+  --color-link: #88bfd6;
+  --color-link-strong: #b4dae9;
+  --color-cta-bg: #edf1ee;
+  --color-cta-hover: #ffffff;
+  --color-cta-text: #12181b;
+  --color-focus: rgba(136, 191, 214, 0.58);
+  --color-selection: rgba(222, 132, 95, 0.26);
+  --color-glow-warm: rgba(222, 132, 95, 0.17);
+  --color-glow-cool: rgba(104, 166, 181, 0.12);
+  --color-blob-warm: rgba(222, 132, 95, 0.18);
+  --color-blob-cool: rgba(104, 166, 181, 0.12);
+  --color-brand-text: #fff8f2;
+  --shadow-soft: 0 20px 48px rgba(0, 0, 0, 0.34);
+  --shadow-lift: 0 24px 58px rgba(0, 0, 0, 0.42);
+  --shadow-inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --color-accent-hover-border: rgba(222, 132, 95, 0.4);
+  --color-nav-active-ring: rgba(237, 241, 238, 0.1);
 }

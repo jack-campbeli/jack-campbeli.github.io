@@ -7,8 +7,8 @@
 }
 
 .heroSurface {
-  background: #fffbf7;
-  box-shadow: 0 2px 10px rgba(71, 51, 36, 0.04);
+  background: var(--color-surface-strong);
+  box-shadow: var(--shadow-soft);
 }
 
 .heroCopy {
@@ -52,18 +52,18 @@
 }
 
 .primaryAction {
-  background: var(--color-text);
-  color: #fffdf9;
-  box-shadow: 0 12px 28px rgba(71, 51, 36, 0.08);
+  background: var(--color-cta-bg);
+  color: var(--color-cta-text);
+  box-shadow: var(--shadow-soft);
 }
 
 .primaryAction:hover {
-  color: #fffdf9;
+  color: var(--color-cta-text);
 }
 
 .secondaryAction {
   border: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.74);
+  background: var(--color-surface-inset);
   color: var(--color-text);
 }
 
@@ -84,7 +84,7 @@
   padding: 16px 18px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-  background: #fffaf5;
+  background: var(--color-surface-panel);
 }
 
 .panelLabel {
@@ -140,14 +140,14 @@
 
 @supports (-moz-appearance: none) {
   .heroSurface {
-    background: #fffaf6;
+    background: var(--color-firefox-surface);
     box-shadow: none;
   }
 
   .heroSurface :global(.eyebrow),
   .secondaryAction,
   .panelItem {
-    background: #fffbf8;
+    background: var(--color-firefox-surface);
   }
 
   .primaryAction {

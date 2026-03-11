@@ -36,17 +36,17 @@
 }
 
 .primaryLink {
-  background: var(--color-text);
-  color: #fffdf9;
+  background: var(--color-cta-bg);
+  color: var(--color-cta-text);
 }
 
 .primaryLink:hover {
-  color: #fffdf9;
+  color: var(--color-cta-text);
 }
 
 .secondaryLink {
   border: 1px solid var(--color-border);
-  background: rgba(255, 255, 255, 0.76);
+  background: var(--color-surface-inset);
   color: var(--color-text);
 }
 

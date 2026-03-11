@@ -35,7 +35,7 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(230, 163, 118, 0.22) 0%, rgba(230, 163, 118, 0) 72%);
+  background: radial-gradient(circle, var(--color-blob-warm) 0%, rgba(230, 163, 118, 0) 72%);
 }
 
 .site::after {
@@ -44,7 +44,7 @@
   width: 520px;
   height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(110, 170, 184, 0.18) 0%, rgba(110, 170, 184, 0) 68%);
+  background: radial-gradient(circle, var(--color-blob-cool) 0%, rgba(110, 170, 184, 0) 68%);
 }
 
 @supports (-moz-appearance: none) {
