@@ -6,6 +6,7 @@ const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/resume', label: 'Resume' },
+  { to: '/apps', label: 'Apps' },
 ]
 
 type HeaderProps = {

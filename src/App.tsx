@@ -5,6 +5,8 @@ import Layout from './components/Layout'
 const HomePage = lazy(() => import('./pages/HomePage'))
 const AboutPage = lazy(() => import('./pages/AboutPage'))
 const ResumePage = lazy(() => import('./pages/ResumePage'))
+const AppsPage = lazy(() => import('./pages/AppsPage'))
+const DesktopPleasePage = lazy(() => import('./pages/DesktopPleasePage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
 const siteTitle = 'Jack Campbell'
@@ -30,6 +32,16 @@ const routes: AppRoute[] = [
     path: '/resume',
     element: <ResumePage />,
     handle: { title: 'Resume' },
+  },
+  {
+    path: '/apps',
+    element: <AppsPage />,
+    handle: { title: 'Apps' },
+  },
+  {
+    path: '/apps/desktop-please',
+    element: <DesktopPleasePage />,
+    handle: { title: 'Desktop Please' },
   },
   {
     path: '*',

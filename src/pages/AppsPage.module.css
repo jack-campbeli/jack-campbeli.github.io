@@ -1,0 +1,36 @@
+.card {
+  padding: clamp(24px, 5vw, 48px);
+  overflow-wrap: anywhere;
+}
+
+.card p,
+.card li {
+  max-width: 48rem;
+  line-height: 1.75;
+}
+
+.card p {
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin: 1.8rem 0 0.5rem;
+}
+
+.card ol {
+  padding-left: 1.5rem;
+}
+
+.card li {
+  margin-bottom: 1rem;
+}
+
+.card a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.card > a:first-child {
+  display: block;
+  margin-bottom: 1.5rem;
+}
